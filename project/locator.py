@@ -7,3 +7,8 @@ class ItemLocator:
     ITEM_IN_CART = (By.XPATH, '//*[@id="basket_formset"]/div/div/div[2]/h3/a')
     PRICE_OF_ITEM = (By.CLASS_NAME, 'price_color')
     PRICE_OF_ITEM_IN_CART = (By.XPATH, '//*[@id="basket_formset"]/div/div/div[4]/p')
+    LINK_TO_SIGNUP = (By.ID, 'login_link')
+    EMPTY_CART = (By.XPATH, '//*[@id="default"]/div[2]/div/div[1]/h1')
+
+class ProductPageLocators:
+    SUCCESS_MESSAGE = (By.XPATH, '//*[@id="messages"]/div[1]/div')
