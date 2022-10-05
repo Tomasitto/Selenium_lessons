@@ -3,28 +3,30 @@ from selenium.webdriver.common.by import By
 import time
 import math 
 
-link = "http://suninjuly.github.io/find_link_text "
+link = "http://suninjuly.github.io/registration2.html"
 
 try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    button = browser.find_element(By.LINK_TEXT, str(math.ceil(math.pow(math.pi, math.e)*10000)))
-    button.click()
+    input1 = browser.find_element(By.XPATH, '/html/body/div/form/div[1]/div[1]/input')
+    input1.send_keys('Tomas')
 
-    input1 = browser.find_element(By.TAG_NAME, 'input')
-    input1.send_keys("Ivan")
-    input2 = browser.find_element(By.NAME, 'last_name')
-    input2.send_keys("Petrov")
-    input3 = browser.find_element(By.CLASS_NAME, 'form-control.city')
-    input3.send_keys("Smolensk")
-    input4 = browser.find_element(By.ID, "country")
-    input4.send_keys("Russia")
-    button = browser.find_element(By.CSS_SELECTOR, "button.btn")
+    input2 = browser.find_element(By.XPATH, '/html/body/div/form/div[1]/div[2]/input')
+    input2.send_keys('Mann')
+
+    input3 = browser.find_element(By.XPATH, '/html/body/div/form/div[1]/div[3]/input')
+    input3.send_keys('Gucci_gang@ya.com')
+
+    input4 = browser.find_element(By.XPATH, '/html/body/div/form/div[2]/div[1]/input')
+    input4.send_keys('8-800-755-35-35')
+    
+    input5 = browser.find_element(By.XPATH, '/html/body/div/form/div[2]/div[2]/input')
+    input5.send_keys('Pushkina')
+
+    button = browser.find_element(By.XPATH, '/html/body/div/form/button')
     button.click()
 
 finally:
-    # успеваем скопировать код за 30 секунд
-    time.sleep(30)
-    # закрываем браузер после всех манипуляций
+    time.sleep(10)
     browser.quit()
